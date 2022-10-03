@@ -1,0 +1,7 @@
+.menu {
+    background-color: #e67e22;
+    justify-content: center;
+    display: inline-block;
+    height: max-content;
+    position: relative;
+}
