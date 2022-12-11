@@ -1,13 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './component/Login';
+import Register from './component/Register';
+import LandingPage from './component/LandingPage/LandingPage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<LandingPage />}></Route>
+      <Route path="/Login" element={<Login />}></Route>
+      <Route path="/Register" element={<Register />}></Route>
+    </Routes>
+      
+    </BrowserRouter>
   </React.StrictMode>
 );
 
