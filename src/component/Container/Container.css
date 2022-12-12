@@ -63,6 +63,14 @@ td{
     text-align: center;
 }
 
+tr {
+    height:100px;
+}
+.bt-Fund, .bt-Withdraw
+{
+    margin:0px;
+}
+
 .bt-Fund
 {
     background-color: #5deb69;

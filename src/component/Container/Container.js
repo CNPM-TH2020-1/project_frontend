@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Content from "../Content/Content";
 import "./Container.css"
 
-const Container = () => {
-    const news = 
+const Container = (props) => {
+
     <tr>
         <td className="col-Name">Học lại</td>
         <td className="col-Type">3 tháng</td>
@@ -18,7 +18,6 @@ const Container = () => {
         </td>
     </tr>
 
-    const [create,CreateRow]=useState()
 
     return (
         <div className="Container">
@@ -27,7 +26,7 @@ const Container = () => {
                     <h3>Total Balance</h3>
                     <h2>100.000.000 VND</h2>
                 </div>
-                <button className="bt-create">Create</button>
+                <button className="bt-create" onClick={props.click}>Create</button>
             </div>
             <div className="Statistics">
                 <div className="Search">
