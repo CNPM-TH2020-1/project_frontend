@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Content from "../Content/Content";
+import { useNavigate } from "react-router-dom";
 import "./Container.css"
 
 const Container = (props) => {
-
+    const news=
     <tr>
         <td className="col-Name">Học lại</td>
         <td className="col-Type">3 tháng</td>
@@ -17,6 +17,7 @@ const Container = (props) => {
             <button className="bt-Withdraw">Withdraw</button>
         </td>
     </tr>
+    const history=useNavigate()
 
 
     return (
@@ -44,16 +45,16 @@ const Container = (props) => {
                         <th> </th>
                     </tr>
                     <tr>
-                        <td className="col-Name">Đi chơi</td>
+                        <td className="col-Name" onClick={()=>{history("/Savingdetail")}}>Đi chơi</td>
                         <td className="col-Type">3 tháng</td>
                         <td className="col-Expr">01-03-2023</td>
                         <td className="col-Funding">1M</td>
                         <td className="col-Profit">0</td>
                         <td>
-                            <button className="bt-Fund">Fund</button>
+                            <button className="bt-Fund" onClick={props.click2}>Fund</button>
                         </td>
                         <td>
-                            <button className="bt-Withdraw">Withdraw</button>
+                            <button className="bt-Withdraw" onClick={props.click1}>Withdraw</button>
                         </td>
                     </tr>
                     <tr>
@@ -63,10 +64,10 @@ const Container = (props) => {
                         <td className="col-Funding">1M</td>
                         <td className="col-Profit">0</td>
                         <td>
-                            <button className="bt-Fund">Fund</button>
+                            <button className="bt-Fund" onClick={props.click2}>Fund</button>
                         </td>
                         <td>
-                            <button className="bt-Withdraw">Withdraw</button>
+                            <button className="bt-Withdraw" onClick={props.click1}>Withdraw</button>
                         </td>
                     </tr>
                     <tr>
@@ -76,10 +77,10 @@ const Container = (props) => {
                         <td className="col-Funding">1M</td>
                         <td className="col-Profit">0</td>
                         <td>
-                            <button className="bt-Fund">Fund</button>
+                            <button className="bt-Fund" onClick={props.click2}>Fund</button>
                         </td>
                         <td>
-                            <button className="bt-Withdraw">Withdraw</button>
+                            <button className="bt-Withdraw" onClick={props.click1}>Withdraw</button>
                         </td>
                     </tr>
                 </table>

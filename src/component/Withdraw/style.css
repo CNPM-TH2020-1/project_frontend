@@ -1,0 +1,56 @@
+.p-create
+{
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    border: #749dd6 solid 2px;
+    border-radius: 20px;
+    background:black;
+    color:rgb(238, 201, 53);
+    width: 30%;
+}
+
+.p-create-name{
+    margin:30px ;
+}
+
+.p-create-input
+{
+    width: 100%;
+    height: 30px;
+    background-color: black;
+    color: white;
+    border: white solid 1px;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 10px;
+}
+
+.p-bt-dialog
+{
+    display: flex;
+    justify-content: center;
+}
+
+.p-dialog-cancel, .p-dialog-create
+{
+    width: 100px;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: yellow;
+}
+
+.p-dialog-cancel:hover, .p-dialog-create:hover
+{
+    background-color: black;
+    color: white;
+    border: white solid 1px;
+}
+
+.p-dialog-create
+{
+    margin-left: 30px;
+}

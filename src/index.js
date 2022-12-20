@@ -7,6 +7,8 @@ import Login from './component/Login';
 import Register from './component/Register';
 import LandingPage from './component/LandingPage/LandingPage';
 import Create from './component/Create/Create';
+import Withdraw from './component/Withdraw';
+import Savingdetail from './component/SavingDetail/SavingDetail';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -16,6 +18,8 @@ root.render(
       <Route path="/Login" element={<Login />}></Route>
       <Route path="/Register" element={<Register />}></Route>
       <Route path="/Create" element={<Create />}></Route>
+      <Route path="/Withdraw" element={<Withdraw type="Withdraw"/>}></Route>
+      <Route path="/SavingDetail" element={<Savingdetail/>}></Route>
     </Routes>
       
     </BrowserRouter>
