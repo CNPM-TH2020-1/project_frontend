@@ -22,7 +22,7 @@ const App = () => {
       Profit: '0'
     }]
   })
-  
+
   useEffect(() => {
     axios.get("http://localhost:4000/saving/getSaving").then((res) => {
       setMessage(res)
@@ -40,15 +40,12 @@ const App = () => {
     })
     setMessage(message)
   }
-const x=localStorage.getItem('cccd')
-  const [cccd,SetCCCD]=useState(Number(localStorage.getItem('cccd').slice(1,x.length-1)))
+  const x = localStorage.getItem('cccd')
+  const [cccd, SetCCCD] = useState(Number(localStorage.getItem('cccd').slice(1, x.length - 1)))
   console.log(cccd)
   console.log(message.data)
   return (
     <div>
-      <div className="cccd">
-        <Login></Login>
-      </div>
       <LandingPage data={message.data} click={updatedata} cccd={cccd}></LandingPage>
     </div>
   )

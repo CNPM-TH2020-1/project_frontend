@@ -25,7 +25,6 @@ const Container = (props) => {
 
     a.map((saving)=>{
         sum+=Number(saving.Balance)
-        console.log(saving.Balance)
         return(sum)}
     )
 

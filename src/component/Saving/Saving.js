@@ -11,6 +11,7 @@ const Saving = (props) => {
         props.click2(props.STT)
     }
     return (
+
         <tr className={props.STT}>
             <td className="col-Name">{props.Name}</td>
             <td className="col-Type">{props.Type}</td>
@@ -24,6 +25,7 @@ const Saving = (props) => {
                 <button className="bt-Withdraw" onClick={widtdraw}>Withdraw</button>
             </td>
         </tr>
+
     )
 }
 

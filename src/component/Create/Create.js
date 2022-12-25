@@ -17,6 +17,7 @@ const Create = (props) => {
 
         props.update()
         props.click()
+        window.location.reload()
     }
     
 

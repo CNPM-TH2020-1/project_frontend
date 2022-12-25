@@ -58,7 +58,7 @@ const LandingPage=(props)=> {
   }
   if (fund===false)
   {
-    modelFund.css('display','none')
+    modelFund.css('display','none') 
   } 
   else
   {
@@ -85,14 +85,15 @@ const LandingPage=(props)=> {
         Balance:""
     }]
     }
+    console.log(data)
   return (
     <div className="Landing-Page">
-      <Header></Header>
+      <Header user={props.cccd}></Header>
 
       <Container click={CreateBox} click1={WithdrawBox} click2={FundBox} data={data} cccd={props.cccd}></Container> 
 
       <div className="model-create">
-        <Create click={CreateBox} update={UpdateSaving} length={dts.length} cccd={props.cccd}></Create>
+        <Create click={CreateBox} update={UpdateSaving} cccd={props.cccd}></Create>
       </div>
 
       <div className="model-withdraw">

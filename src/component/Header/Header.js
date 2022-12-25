@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "./Header.css"
 
 
-const Header =() =>
+const Header =(props) =>
 {
     const more= <div className='More'>
     <a href="https://www.google.com.vn/" className='bt-Account'>Account</a>
@@ -30,7 +30,7 @@ const Header =() =>
             <div className='Header-right'>
                 <div className='infor'>
                     <img src='https://kynguyenlamdep.com/wp-content/uploads/2022/06/avatar-cute-meo-con-than-chet-700x695.jpg' alt="khong co" className='Avt'></img>
-                    <h2 className='Name'>Tri</h2>
+                    <h2 className='Name'>{props.user}</h2>
                     <div className='bt-More' onClick={Ishidden}>a</div>
                     {hidden===true?more:null}
                 </div>
