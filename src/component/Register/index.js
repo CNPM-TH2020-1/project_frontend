@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
 import GHeader from "../GHeader/GHeader";
+import axios from "axios";
+import $ from "jquery"
 const Register = () => {
   const [check, setCheck] = useState(true);
   const userref = useRef();
@@ -28,7 +30,23 @@ const Register = () => {
       });
     }
   };
+  const [notify, SetNotify] = useState(false);
+  const signup = () =>
+  {
+    axios.post('http://localhost:4000/user/create', {
+          CCCD: $(".username").val(),
+          username: $(".username").val(),
+          password: $(".password").val(),
+          address:"a",
+          isAdmin:false,
+        }).then((res)=>{
+            SetNotify(res.data.success)
+            
+        })
+        console.log(notify)
 
+    notify===true? history("/login"): setCheck("Đăng ký thất bại")
+  }
   return (
     <div className="parent">
       <GHeader/>
@@ -70,13 +88,9 @@ const Register = () => {
               id="Retypepassword"
               className="password"
             />
-            {!check && (
-              <p className="alert">
-                password and retype password aren't matching
-              </p>
-            )}
+            {check}
           </div>
-          <button type="submit" className="Button" onClick={()=>{history("/login")}}>
+          <button type="submit" className="Button" onClick={signup}>
             Register
           </button>
         </form>

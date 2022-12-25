@@ -4,15 +4,20 @@ import "./style.css";
 import Container from "../Container/Container";
 import Create from "../Create/Create";
 import Withdraw from "../Withdraw";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Fund from "../Fund/Fund";
 
 
-const LandingPage=()=> {
+const LandingPage=(props)=> {
   const modelCreate=$(".model-create")
   const overlay=$(".opacity")
   const modelWithdraw=$(".model-withdraw")
   const modelFund=$(".model-Fund")
 
+  // Data
+  const a = props.data
+  const [dts,setdt]=useState(a)
+  // Xử lý event cho bt
   const [create, Setcreate] = useState(false)
   const CreateBox = () => {
     Setcreate(!create)
@@ -30,7 +35,10 @@ const LandingPage=()=> {
   }
 
   const [withdraw, Setwithdraw] = useState(false)
-  const WithdrawBox = () => {
+  const [id,setId]=useState("")
+  const WithdrawBox = (newId) => {
+    setId(newId)
+    console.log(newId)
     Setwithdraw(!withdraw)
   }
   if (withdraw===false)
@@ -43,7 +51,9 @@ const LandingPage=()=> {
   }
 
   const [fund, Setfund] = useState(false)
-  const FundBox = () => {
+  const FundBox = (newId) => {
+    setId(newId)
+    console.log(newId)
     Setfund(!fund)
   }
   if (fund===false)
@@ -55,25 +65,45 @@ const LandingPage=()=> {
     modelFund.css('display','block')
   }
 
+  // Cập nhật data
+  
+  const UpdateSaving = () =>
+    {
+      props.click();
+    }
+  let data=props.data.filter(saving => saving.CCCD===props.cccd)
+  if(!data.length)
+    {
+      
+      data=[{
+        _id: "",
+        name:"",
+        Type:{
+          name:""
+        },
+        createAt:"",
+        Balance:""
+    }]
+    }
   return (
     <div className="Landing-Page">
       <Header></Header>
 
-      <Container click={CreateBox} click1={WithdrawBox} click2={FundBox}></Container> 
+      <Container click={CreateBox} click1={WithdrawBox} click2={FundBox} data={data} cccd={props.cccd}></Container> 
 
-      <div className="model-create" onClick={CreateBox}>
-        <Create></Create>
+      <div className="model-create">
+        <Create click={CreateBox} update={UpdateSaving} length={dts.length} cccd={props.cccd}></Create>
       </div>
 
-      <div className="model-withdraw" onClick={WithdrawBox}>
-        <Withdraw type="Withdraw"></Withdraw>
+      <div className="model-withdraw">
+        <Withdraw click={WithdrawBox} id={id} update={UpdateSaving}></Withdraw>
       </div>
 
-      <div className="model-Fund" onClick={FundBox}>
-        <Withdraw type="Fund"></Withdraw>
+      <div className="model-Fund" >
+        <Fund click={FundBox} id={id} update={UpdateSaving}></Fund>
       </div>
 
-      <div className="opacity" ></div>
+      <div className="opacity"></div>
 
 
     </div>

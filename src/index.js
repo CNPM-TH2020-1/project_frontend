@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './component/Login';
 import Register from './component/Register';
 import LandingPage from './component/LandingPage/LandingPage';
+import App from './app';
 import Create from './component/Create/Create';
 import Withdraw from './component/Withdraw';
 import Savingdetail from './component/SavingDetail/SavingDetail';
@@ -14,7 +15,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<LandingPage />}></Route>
+      <Route path="/" element={<App />}></Route>
       <Route path="/Login" element={<Login />}></Route>
       <Route path="/Register" element={<Register />}></Route>
       <Route path="/Create" element={<Create />}></Route>
