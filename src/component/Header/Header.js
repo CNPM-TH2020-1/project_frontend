@@ -5,7 +5,6 @@ import "./Header.css"
 const Header =(props) =>
 {
     const more= <div className='More'>
-    <a href="https://www.google.com.vn/" className='bt-Account'>Account</a>
     <a href="http://localhost:3000/login" className='bt-Logout'>Log Out</a>
     </div>
     const [hidden,SetHidden]=useState(false)
@@ -31,7 +30,7 @@ const Header =(props) =>
                 <div className='infor'>
                     <img src='https://kynguyenlamdep.com/wp-content/uploads/2022/06/avatar-cute-meo-con-than-chet-700x695.jpg' alt="khong co" className='Avt'></img>
                     <h2 className='Name'>{props.user}</h2>
-                    <div className='bt-More' onClick={Ishidden}>a</div>
+                    <div className='bt-More' onClick={Ishidden}>V</div>
                     {hidden===true?more:null}
                 </div>
                 

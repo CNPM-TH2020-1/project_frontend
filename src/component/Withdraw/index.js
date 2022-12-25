@@ -12,15 +12,14 @@ const Withdraw = (props) => {
             money:Number($(".p-create-input").val())
         })
             .then((res) => {
-                SetNotify(String(res.data.message))
-                console.log(res)
+                SetNotify(res.data.message)
+                console.log(notify)
             });
-        if(notify==="Goi tien thanh cong")
-            {
+
                 props.update()
                 props.click(props.id)
                 window.location.reload()
-            }
+
         
     }
 

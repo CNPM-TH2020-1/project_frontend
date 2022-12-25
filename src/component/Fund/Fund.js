@@ -18,6 +18,7 @@ const Fund = (props) => {
             }));
         props.update()
         props.click(props.id)
+        window.location.reload()
     }
     return (
         <div className="p-fund">
